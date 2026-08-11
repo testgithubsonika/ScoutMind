@@ -2,7 +2,7 @@
 
 **An AI-powered hiring platform that uses semantic search and intelligent matching to connect the right candidates with the right jobs — automatically.**
 
-<p align="center"> <a href="https://scout-mind-mu.vercel.app" target="_blank"> <img src="https://img.shields.io/badge/🌐%20Live%20Demo-ScoutMind-success?style=for-the-badge" /> </a> <a href="https://github.com/testgithubsonika/Scout_Mind" target="_blank"> <img src="https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github" /> </a> </p>
+<p align="center"> <a href="https://scout-mind-mu.vercel.app" target="_blank"> <img src="https://img.shields.io/badge/🌐%20Live%20Demo-ScoutMind-success?style=for-the-badge" /> </a> <a href="https://github.com/testgithubsonika/ScoutMind" target="_blank"> <img src="https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github" /> </a> </p>
 
 
 <p align="center"> <b>☁️ Deployment</b><br> Frontend → Vercel &nbsp;|&nbsp; Backend → AWS EC2 &nbsp;|&nbsp; Database → PostgreSQL (AWS) &nbsp;|&nbsp;minio (AWS) |&nbsp; Vector Store → pgvector </p>
