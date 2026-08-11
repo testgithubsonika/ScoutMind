@@ -1,0 +1,25 @@
+package com.scoutmind.service;
+
+import com.scoutmind.dto.JobApplicationResponseDTO;
+import com.scoutmind.dto.RecruiterStatsDTO;
+import com.scoutmind.enums.ApplicationStatus;
+
+import java.util.List;
+
+public interface ApplicationService {
+        JobApplicationResponseDTO applyForJob(String candidateEmail, Long jobId, Long resumeId);
+
+        List<JobApplicationResponseDTO> getMyApplications(String candidateEmail);
+
+        List<JobApplicationResponseDTO> getApplicationsForRecruiter(String recruiterEmail);
+
+        List<JobApplicationResponseDTO> getApplicationsForJob(Long jobId, String recruiterEmail,
+                        ApplicationStatus status);
+
+        JobApplicationResponseDTO updateApplicationStatus(Long applicationId, ApplicationStatus newStatus,
+                        String recruiterEmail);
+
+        JobApplicationResponseDTO shortlistCandidate(Long applicationId, String recruiterEmail);
+
+        RecruiterStatsDTO getRecruiterStats(String recruiterEmail);
+}

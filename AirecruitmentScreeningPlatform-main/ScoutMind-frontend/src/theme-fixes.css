@@ -1,0 +1,571 @@
+/* Theme Fixes - Replace white/grey backgrounds with dark theme colors */
+
+/* =============================================
+   FIX WHITE TEXT ON LIGHT BACKGROUNDS
+   ============================================= */
+
+/* Fix React inline styles that render as background-color (not background) */
+[style*="background-color: white"],
+[style*="background-color: white;"],
+[style*="background-color: #fff"],
+[style*="background-color: #ffffff"],
+[style*="background-color:#fff"],
+[style*="background-color:white"],
+[style*="backgroundColor: white"],
+[style*="backgroundColor: #fff"],
+[style*="backgroundColor: '#fff'"],
+[style*="backgroundColor: 'white'"] {
+    background: rgba(30, 41, 59, 0.6) !important;
+    color: #f1f5f9 !important;
+}
+
+/* Catch React runtime conversion to rgb() */
+[style*="background: rgb(255, 255, 255"],
+[style*="background:rgba(255,255,255"],
+[style*="background-color: rgb(255, 255, 255"],
+[style*="background-color:rgba(255,255,255"],
+[style*="background: rgb(248, 250, 252"],
+[style*="background: rgb(249, 250, 251"],
+[style*="background: rgb(241, 245, 249"],
+[style*="background-color: rgb(248, 250, 252"],
+[style*="background-color: rgb(249, 250, 251"],
+[style*="background-color: rgb(241, 245, 249"],
+[style*="background: rgba(248, 250, 252"],
+[style*="background: rgba(249, 250, 251"],
+[style*="background: rgba(241, 245, 249"],
+[style*="background-color: rgba(248, 250, 252"],
+[style*="background-color: rgba(249, 250, 251"],
+[style*="background-color: rgba(241, 245, 249"] {
+    background: rgba(15, 23, 42, 0.8) !important;
+    color: var(--text-main) !important;
+}
+
+/* Override ANY element that tries to use white text on a light background */
+[style*="background: white"],
+[style*="background: 'white'"],
+[style*='background: "white"'],
+[style*="background:#fff"],
+[style*="background: #fff"],
+[style*="background: '#fff'"] {
+    background: rgba(30, 41, 59, 0.6) !important;
+    color: #f1f5f9 !important;
+}
+
+/* Fix inline gradient backgrounds that may be too light */
+[style*="background: linear-gradient"] {
+    color: #f1f5f9 !important;
+}
+
+/* Override grey backgrounds */
+[style*="background: #f3f4f6"],
+[style*="background:#f3f4f6"],
+[style*="background: '#f3f4f6'"],
+[style*="background: #e5e7eb"],
+[style*="background:#e5e7eb"],
+[style*="background-color: #f3f4f6"],
+[style*="background-color: #f8fafc"],
+[style*="background-color: #f9fafb"],
+[style*="background-color: #f1f5f9"] {
+    background: rgba(100, 116, 139, 0.15) !important;
+    color: #f1f5f9 !important;
+}
+
+/* Fix table borders */
+[style*="border-bottom: 1px solid #f3f4f6"],
+[style*="borderBottom: 1px solid #f3f4f6"],
+[style*="border-top: 1px solid #f3f4f6"] {
+    border-bottom: 1px solid rgba(100, 116, 139, 0.2) !important;
+    border-top: 1px solid rgba(100, 116, 139, 0.2) !important;
+}
+
+[style*="borderBottom: '1px solid #f3f4f6'"],
+[style*="borderTop: '1px solid #f3f4f6'"] {
+    border-bottom: 1px solid rgba(100, 116, 139, 0.2) !important;
+    border-top: 1px solid rgba(100, 116, 139, 0.2) !important;
+}
+
+/* Fix section borders */
+[style*="borderTop: '1px solid #f3f4f6'"],
+[style*="border-top: 1px solid #f3f4f6"],
+[style*='borderTop: "1px solid #f3f4f6"'] {
+    border-top: 1px solid rgba(100, 116, 139, 0.2) !important;
+}
+
+[style*="borderBottom: '1px solid #f3f4f6'"],
+[style*='borderBottom: "1px solid #f3f4f6"'] {
+    border-bottom: 1px solid rgba(100, 116, 139, 0.2) !important;
+}
+
+/* Fix border colors */
+[style*="border: '1px solid #f3f4f6'"],
+[style*="border: 1px solid #f3f4f6"],
+[style*='border: "1px solid #f3f4f6"'],
+[style*="border: '1px solid #e2e8f0'"],
+[style*="border: 1px solid #e2e8f0"] {
+    border: 1px solid rgba(100, 116, 139, 0.2) !important;
+}
+
+/* Fix dashed borders (empty states) */
+[style*="border: '1px dashed #e5e7eb'"],
+[style*="border: 1px dashed #e5e7eb"] {
+    border: 1px dashed rgba(100, 116, 139, 0.25) !important;
+    background: rgba(30, 41, 59, 0.4) !important;
+}
+
+/* Fix any white background on cards in the dashboard */
+div[style*="background: '#fff'"],
+div[style*="background: #fff"],
+div[style*='background: "#fff"'],
+div[style*="background: white"],
+div[style*="background-color: white"],
+div[style*="background-color: #fff"],
+div[style*="backgroundColor: 'white'"],
+div[style*="backgroundColor: '#fff'"] {
+    background: rgba(30, 41, 59, 0.6) !important;
+    color: #f1f5f9 !important;
+}
+
+/* =============================================
+   FIX TOAST NOTIFICATIONS WITH LIGHT BACKGROUNDS
+   ============================================= */
+
+/* Fix success toast */
+[style*="background: #dcfce7"],
+[style*="background: '#dcfce7'"],
+[style*="background-color: #dcfce7"] {
+    background: rgba(34, 197, 94, 0.15) !important;
+    border-color: rgba(34, 197, 94, 0.3) !important;
+}
+
+[style*="background: #dcfce7"] [style*="color: '#166534'"],
+[style*="background: #fee2e2"] [style*="color: '#991b1b'"],
+[style*="background: #fef9c3"] [style*="color: '#854d0e'"],
+[style*="background: #dbeafe"] [style*="color: '#1e40af'"] {
+    color: #f1f5f9 !important;
+}
+
+/* Fix error toast */
+[style*="background: #fee2e2"],
+[style*="background: '#fee2e2'"],
+[style*="background-color: #fee2e2"] {
+    background: rgba(239, 68, 68, 0.15) !important;
+}
+
+/* Fix warning toast */
+[style*="background: #fef9c3"],
+[style*="background: '#fef9c3'"],
+[style*="background-color: #fef9c3"] {
+    background: rgba(234, 179, 8, 0.15) !important;
+}
+
+/* Fix info toast */
+[style*="background: #dbeafe"],
+[style*="background: '#dbeafe'"],
+[style*="background-color: #dbeafe"] {
+    background: rgba(59, 130, 246, 0.15) !important;
+}
+
+/* =============================================
+   FIX TEXT COLOR OVERRIDES
+   ============================================= */
+
+/* Fix dark text colors that are invisible on dark backgrounds */ 
+[style*="color: '#1f2937'"],
+[style*="color: #1f2937"],
+[style*="color: '#4b5563'"],
+[style*="color: #4b5563"],
+[style*="color: #6b7280"],
+[style*="color: '#6b7280'"],
+[style*='color: "#4b5563"'],
+[style*="color: '#374151'"],
+[style*="color: #374151"] {
+    color: #f1f5f9 !important;
+}
+
+/* Fix links with dark/amber colors that may be low contrast */
+a[style*="color: #d97706"],
+a[style*="color: '#d97706'"],
+a[style*="color: #b45309"],
+a[style*="color: '#b45309'"] {
+    color: #fbbf24 !important;
+}
+
+/* =============================================
+   FIX TABLE SPECIFIC ISSUES
+   ============================================= */
+
+table {
+    color: var(--text-main) !important;
+}
+
+table td,
+table th {
+    color: var(--text-main) !important;
+}
+
+/* =============================================
+   FIX BADGE / LABEL BACKGROUNDS
+   ============================================= */
+
+.badge[style*="background: #f3f4f6"],
+span[style*="background: #f3f4f6"],
+.badge[style*="background: '#f3f4f6'"] {
+    background: rgba(100, 116, 139, 0.2) !important;
+    color: #f1f5f9 !important;
+}
+
+button[style*="background: #f3f4f6"] {
+    background: rgba(100, 116, 139, 0.2) !important;
+    color: #f1f5f9 !important;
+}
+
+/* Fix match score background badges (green/yellow on white cards) */
+[style*="background: #dcfce7"],
+[style*="background: '#dcfce7'"] {
+    background: rgba(34, 197, 94, 0.2) !important;
+    color: #bbf7d0 !important;
+}
+
+[style*="background: #fef3c7"],
+[style*="background: '#fef3c7'"] {
+    background: rgba(251, 191, 36, 0.2) !important;
+    color: #fde68a !important;
+}
+
+[style*="color: '#166534'"],
+[style*="color: #166534"] {
+    color: #bbf7d0 !important;
+}
+
+[style*="color: '#b45309'"],
+[style*="color: #b45309"] {
+    color: #fde68a !important;
+}
+
+/* =============================================
+   FIX AI EXPLANATION BANNER LIGHT BACKGROUNDS
+   ============================================= */
+
+/* Fix the "why you're a match" banner in JobDetailsModal */
+[style*="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)"],
+[style*="background: linear-gradient(135deg, #f0fdf4"] {
+    background: rgba(34, 197, 94, 0.1) !important;
+    border-color: rgba(34, 197, 94, 0.2) !important;
+}
+
+[style*="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)"] h4,
+[style*="background: linear-gradient(135deg, #f0fdf4"] h4 {
+    color: #bbf7d0 !important;
+}
+
+[style*="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)"] p,
+[style*="background: linear-gradient(135deg, #f0fdf4"] p {
+    color: #86efac !important;
+}
+
+/* =============================================
+   FIX LIGHT BADGE BACKGROUNDS IN JOB CARDS
+   ============================================= */
+
+/* Fix job detail badges with light backgrounds */
+[style*="background: #ecfdf5"] {
+    background: rgba(52, 211, 153, 0.15) !important;
+    color: #6ee7b7 !important;
+    border-color: rgba(52, 211, 153, 0.2) !important;
+}
+
+[style*="background: #eff6ff"] {
+    background: rgba(59, 130, 246, 0.15) !important;
+    color: #93c5fd !important;
+    border-color: rgba(59, 130, 246, 0.2) !important;
+}
+
+[style*="background: #f5f3ff"] {
+    background: rgba(139, 92, 246, 0.15) !important;
+    color: #c4b5fd !important;
+    border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+[style*="background: #fffbeb"] {
+    background: rgba(251, 191, 36, 0.15) !important;
+    color: #fde68a !important;
+    border-color: rgba(251, 191, 36, 0.2) !important;
+}
+
+[style*="background: #e0f2fe"] {
+    background: rgba(56, 189, 248, 0.15) !important;
+    color: #bae6fd !important;
+    border-color: rgba(56, 189, 248, 0.2) !important;
+}
+
+[style*="background: #fdf4ff"] {
+    background: rgba(192, 132, 252, 0.15) !important;
+    color: #d8b4fe !important;
+    border-color: rgba(192, 132, 252, 0.2) !important;
+}
+
+/* Fix additional light backgrounds found in pages */
+[style*="background: #fef2f2"],
+[style*="background: '#fef2f2'"],
+[style*="background-color: #fef2f2"] {
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #fca5a5 !important;
+    border-color: rgba(239, 68, 68, 0.15) !important;
+}
+
+[style*="background: #fefce8"],
+[style*="background: '#fefce8'"],
+[style*="background-color: #fefce8"] {
+    background: rgba(234, 179, 8, 0.1) !important;
+    color: #fde68a !important;
+}
+
+[style*="background: #e0e7ff"],
+[style*="background: '#e0e7ff'"],
+[style*="background-color: #e0e7ff"] {
+    background: rgba(99, 102, 241, 0.15) !important;
+    color: #c7d2fe !important;
+}
+
+[style*="background: #f0f9ff"],
+[style*="background: '#f0f9ff'"],
+[style*="background-color: #f0f9ff"] {
+    background: rgba(56, 189, 248, 0.1) !important;
+    color: #bae6fd !important;
+}
+
+[style*="background: #d1fae5"],
+[style*="background: '#d1fae5'"],
+[style*="background-color: #d1fae5"] {
+    background: rgba(52, 211, 153, 0.15) !important;
+    color: #a7f3d0 !important;
+}
+
+[style*="background: #f8fafc"],
+[style*="background: '#f8fafc'"],
+[style*="background-color: #f8fafc"] {
+    background: rgba(30, 41, 59, 0.4) !important;
+    color: var(--text-main) !important;
+    border-color: rgba(100, 116, 139, 0.2) !important;
+}
+
+/* Fix #fff backgrounds in cards */
+[style*="background: '#fff'"],
+[style*="background: #fff"][style*="padding: '1.5rem'"],
+[style*="background: #fff"][style*="border-radius"],
+[style*="background: 'white'"][style*="padding: '1.5rem'"],
+[style*="backgroundColor: '#fff'"][style*="padding"] {
+    background: var(--card-bg) !important;
+    color: var(--text-main) !important;
+}
+
+/* Fix table row light backgrounds */
+tr[style*="background: #f9fafb"],
+tr[style*="background: '#f9fafb'"],
+tr[style*="background-color: #f9fafb"] {
+    background: rgba(30, 41, 59, 0.3) !important;
+}
+
+/* Fix table border colors */
+[style*="borderBottom: '1px solid #e5e7eb'"],
+[style*="border-bottom: 1px solid #e5e7eb"],
+[style*="border: '1px solid #e5e7eb'"],
+[style*="border: 1px solid #e5e7eb"],
+td[style*="border-bottom: 1px solid #e5e7eb"] {
+    border-bottom: 1px solid rgba(100, 116, 139, 0.2) !important;
+    border: 1px solid rgba(100, 116, 139, 0.2) !important;
+}
+
+[style*="border: '1px solid #fecaca'"],
+[style*="border: 1px solid #fecaca"] {
+    border: 1px solid rgba(239, 68, 68, 0.2) !important;
+}
+
+/* Fix color overrides for dark text colors on light backgrounds */
+[style*="color: '#4338ca'"],
+[style*="color: #4338ca"] {
+    color: #c7d2fe !important;
+}
+
+[style*="color: '#dc2626'"],
+[style*="color: #dc2626"],
+[style*="color: '#b91c1c'"],
+[style*="color: #b91c1c"] {
+    color: #fca5a5 !important;
+}
+
+/* Fix the light badge text colors that use dark colors */
+[style*="color: #0369a1"],
+[style*="color: '#0369a1'"] {
+    color: #bae6fd !important;
+}
+
+[style*="color: #86198f"],
+[style*="color: '#86198f'"] {
+    color: #d8b4fe !important;
+}
+
+[style*="color: #047857"],
+[style*="color: '#047857'"] {
+    color: #6ee7b7 !important;
+}
+
+[style*="color: '#065f46'"],
+[style*="color: #065f46"] {
+    color: #6ee7b7 !important;
+}
+
+[style*="color: #3b82f6"],
+[style*="color: '#3b82f6'"] {
+    color: #93c5fd !important;
+}
+
+[style*="color: '#1d4ed8'"],
+[style*="color: #1d4ed8"] {
+    color: #93c5fd !important;
+}
+
+[style*="color: '#7c3aed'"],
+[style*="color: #7c3aed"] {
+    color: #c4b5fd !important;
+}
+
+[style*="color: #9333ea"],
+[style*="color: '#9333ea'"] {
+    color: #c4b5fd !important;
+}
+
+[style*="color: '#991b1b'"],
+[style*="color: #991b1b"],
+[style*="color: #b91c1c"],
+[style*="color: '#b91c1c'"],
+[style*="color: '#dc2626'"],
+[style*="color: #dc2626"] {
+    color: #fca5a5 !important;
+}
+
+[style*="color: '#854d0e'"],
+[style*="color: #854d0e"] {
+    color: #fde68a !important;
+}
+
+/* Fix closed/expired badge */
+[style*="background: #fee2e2"][style*="color: #991b1b"],
+[style*="background: '#fee2e2'"][style*="color: '#991b1b'"] {
+    background: rgba(239, 68, 68, 0.2) !important;
+    color: #fca5a5 !important;
+}
+
+/* =============================================
+   FIX MODAL WITH WHITE BACKGROUND
+   ============================================= */
+
+/* Fix modals that use white background */
+[style*="backgroundColor: 'white'"],
+[style*="backgroundColor: white"],
+[style*="backgroundColor: '#fff'"],
+[style*="background: white"],
+[style*="background: '#fff'"] {
+    background: var(--card-bg-light) !important;
+    color: var(--text-main) !important;
+}
+
+/* Fix modal footer with light bg */
+[style*="background: #f9fafb"],
+[style*="background: '#f9fafb'"],
+[style*="background-color: #f9fafb"] {
+    background: rgba(15, 23, 42, 0.8) !important;
+    color: var(--text-main) !important;
+}
+
+/* Fix AI analysis background */
+[style*="background: #f8fafc"],
+[style*="background: '#f8fafc'"],
+[style*="background-color: #f8fafc"] {
+    background: rgba(30, 41, 59, 0.4) !important;
+    color: var(--text-main) !important;
+    border-color: rgba(100, 116, 139, 0.2) !important;
+}
+
+/* Fix "no matches found" empty state */
+[style*="background: 'white'"][style*="border-radius"],
+div[style*="background: 'white'"][style*="padding: '3rem'"],
+div[style*="background: white"][style*="padding: '3rem'"] {
+    background: rgba(30, 41, 59, 0.4) !important;
+    color: var(--text-muted) !important;
+}
+
+/* =============================================
+   FIX MATCH SCORE BADGE (dark text on light bg)
+   ============================================= */
+
+[style*="background: #ecfdf5"][style*="color: #047857"],
+[style*="background: '#ecfdf5'"][style*="color: '#047857'"] {
+    background: rgba(52, 211, 153, 0.2) !important;
+    color: #6ee7b7 !important;
+    border-color: rgba(52, 211, 153, 0.2) !important;
+}
+
+/* Fix candidate profile modal match score */
+[style*="background: #ecfdf5"][style*="color: #047857"][style*="padding: '0.5rem 1rem'"] {
+    background: rgba(52, 211, 153, 0.2) !important;
+    color: #6ee7b7 !important;
+}
+
+[style*="border: '1px solid #d1fae5'"],
+[style*="border: 1px solid #d1fae5"] {
+    border: 1px solid rgba(52, 211, 153, 0.2) !important;
+}
+
+/* =============================================
+   GENERAL IMPROVEMENTS
+   ============================================= */
+
+/* Ensure all text within the app is visible */
+p, span, div, h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+}
+
+/* Fix buttons that may have unreadable white text on light backgrounds */
+button, .btn, .btn-primary, .btn-secondary, .btn-logout {
+    color: #f1f5f9;
+}
+
+/* Make sure the Mock Interview yellow promo card has good contrast */
+div[style*="background: linear-gradient(135deg, #f5c842"] {
+    color: #1a1a1a !important;
+}
+
+div[style*="background: linear-gradient(135deg, #f5c842"] a,
+div[style*="background: linear-gradient(135deg, #f5c842"] button,
+div[style*="background: linear-gradient(135deg, #f5c842"] h3,
+div[style*="background: linear-gradient(135deg, #f5c842"] p {
+    color: #1a1a1a !important;
+}
+
+/* =============================================
+   VIEW PROFILE BUTTON STYLING
+   ============================================= */
+
+.btn-view-profile {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid rgba(99, 102, 241, 0.3) !important;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15)) !important;
+    border-radius: var(--radius-sm);
+    color: var(--text-main) !important;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.btn-view-profile:hover {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(139, 92, 246, 0.25)) !important;
+    border-color: rgba(99, 102, 241, 0.5) !important;
+    transform: translateY(-1px);
+}

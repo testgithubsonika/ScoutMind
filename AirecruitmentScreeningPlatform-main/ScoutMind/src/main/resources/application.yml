@@ -1,0 +1,62 @@
+spring:
+  application:
+    name: ScoutMind
+    base-url: http://localhost:5173
+  datasource:
+    url: jdbc:postgresql://localhost:5454/vectordb?TimeZone=Asia/Kolkata
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  ai:
+    openai:
+      api-key: ${SPRING_AI_OPENAI_API_KEY}
+      base-url: https://openrouter.ai/api
+      chat:
+        options:
+          model: google/gemini-2.5-flash
+          temperature: 0.7
+          max-tokens: 2048
+      embedding:
+        options:
+          model: openai/text-embedding-3-small
+    # ollama:
+    #   base-url: ${SPRING_AI_OLLAMA_BASE_URL:http://localhost:11434}
+    #   chat:
+    #     options:
+    #       model: openrouter/free
+    # google:
+    #   genai:
+    #     api-key: AIzaSyDZ0MLb0yin9wbR2b7-ZKJ348BWYaLpKL4
+    #     chat:
+    #       options:
+    #         model: gemini-2.0-flash-exp
+    #         temperature: 0.7
+    #     embedding:
+    #       options:
+    #         model: text-embedding-004
+
+server:
+  port: 9090
+
+minio:
+  endpoint: ${MINIO_ENDPOINT:http://localhost:9000}
+  access-key: ${MINIO_ACCESS_KEY:admin}
+  secret-key: ${MINIO_SECRET_KEY:password}
+  bucket: ${MINIO_BUCKET:scoutmind-resumes}
