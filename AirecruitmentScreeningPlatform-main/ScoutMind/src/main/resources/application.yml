@@ -43,7 +43,7 @@ spring:
     #       model: openrouter/free
     # google:
     #   genai:
-    #     api-key: AIzaSyDZ0MLb0yin9wbR2b7-ZKJ348BWYaLpKL4
+    #     api-key: 111111
     #     chat:
     #       options:
     #         model: gemini-2.0-flash-exp
