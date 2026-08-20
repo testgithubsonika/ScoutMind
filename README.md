@@ -1,4 +1,4 @@
-# 🚀 Scout_Mind
+# ScoutMind
 
 **An AI-powered hiring platform that uses semantic search and intelligent matching to connect the right candidates with the right jobs — automatically.**
 
