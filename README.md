@@ -20,7 +20,7 @@ Traditional hiring platforms rely on keyword-based filtering, which fails to cap
 ### 🔍 For Candidates
 
 - **AI Job Recommendations**: Get personalized job suggestions based on your resume's skills, experience, and bio, powered by semantic vector search.
-- **Smart explanations**: "Why this job?" — receive an AI-generated explanation for every recommendation (e.g., _"This job matches your 3 years of React experience and your preference for remote work"_).
+- **Smart explanations**: "Why this job?" — receive an AI-generated explanation for every recommendation(e.g., _"This job matches your 3 years of React experience and your preference for remote work"_).
 - **🤖 AI Mock Interviews**:
   - **Resume-Based**: Practice answering questions generated specifically from your own resume projects and skills.
   - **Topic-Based**: Choose a topic (e.g., "Java Concurrency") and difficulty level for targeted practice.
