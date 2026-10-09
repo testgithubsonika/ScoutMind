@@ -675,7 +675,6 @@ Every AI call follows a **primary → fallback** pattern:
        └──── Spring Retry ──────────┘
              (Rate limit / Timeout handling)
 ```
-
 - **Primary**: OpenAI-compatible API via OpenRouter (`openrouter/free` model)
 - **Fallback**: Local Ollama instance with `gemma3:latest`
 - **Retry**: Spring Retry with `@EnableRetry` for transient failures
